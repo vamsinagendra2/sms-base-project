@@ -1,0 +1,31 @@
+{
+  "entryFile": "src/app.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": [
+    "src/**/*Controller.ts"
+  ],
+  "spec": {
+    "outputDirectory": "public",
+    "specVersion": 3,
+    "securityDefinitions": {
+      "jwt": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-access-token"
+      },
+      "jwt_refresh": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-refresh-token"
+      }
+    }
+  },
+  "routes": {
+    "authenticationModule": "./src/middlewares/authentication.ts",
+    "routesDir": "./src",
+    "middleware": "express"
+  },
+  "ignore": [
+    "**/node_modules/**"
+  ]
+}
